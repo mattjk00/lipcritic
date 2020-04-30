@@ -5,7 +5,18 @@
         <meta charset="utf-8"/>
         <meta name="language" content="english"/> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <style rel="stylesheet" href="style.css"/>
+        <link rel="stylesheet" href="style.css"/>
+        <script src="js/vue.js"></script>
+        <script src="js/vue-router.js"></script>
+        
     </head>
-    <body></body>
+    <body>
+        <h1>Lip Critic</h1>
+        <div id="app">
+            <router-link to="/foo">Go to Foo</router-link>
+            <router-view></router-view>
+        </div>
+    </body>
+
+    <script src="js/main.js"></script>
 </html>
