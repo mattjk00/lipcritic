@@ -5,13 +5,17 @@
         <meta charset="utf-8"/>
         <meta name="language" content="english"/> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" href="style.css"/>
+        <link rel="stylesheet" href="css/style.css"/>
         <script src="js/vue.js"></script>
         <script src="js/vue-router.js"></script>
-        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+        <script src="js/p5/album.js"></script>
+        <script src="js/p5/lipsongs-sketch.js"></script>
     </head>
     <body>
-        <h1>Lip Critic</h1>
+        <div id="sidebar">
+            <h1>Lip Critic</h1>
+        </div>
         <div id="app">
             <router-link to="/foo">Go to Foo</router-link>
             <router-view></router-view>
