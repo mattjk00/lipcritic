@@ -1,42 +1,45 @@
 let els, klc;
 let margin;
 
-function preload() {
-    els = new Album("", loadImage("img/els.jpg"), 0);
-    klc = new Album("", loadImage("img/klc.jpg"), 45);
+let songSketch = function(p) {
+    p.preload = function () {
+        els = new Album("", p.loadImage("img/els.jpg"), 0);
+        klc = new Album("", p.loadImage("img/klc.jpg"), 45);
+    }
+
+    p.setup = function() {
+        p.createCanvas(p.displayWidth, p.displayHeight, p.WEBGL);
+        margin = p.width * 0.15;
+    }
+
+    p.draw = function() {//quad(margin, 0,  margin, 90, margin + 450, 100, margin + 400, 0,);
+        p.background(0, 0, 0);
+
+        p.push();
+        p.stroke("#eeeeee");
+        p.fill("#111111");
+        p.box(p.width, p.height, p.width);
+        p.pop();
+
+        p.noStroke();
+        p.texture(els.img);
+        p.rect(-margin, 0, 100, 100);
+
+        //drawAlbumCube(els, 0, 0, 0);
+        //drawAlbumCube(klc, margin, 0, 0);
+    }
+
+    p.drawAlbumCube = function(album, x, y, z) {
+        p.push();
+        p.translate(x, y, z);
+        p.rotateY(album.rotation);
+        p.rotateZ(album.rotation);
+        
+        album.rotation += 0.01 * (deltaTime / 50);
+        if (album.rotation > 360) { album.rotation = 0; }
+        p.texture(album.img);
+        p.box(margin/2, margin/2, margin/2);
+        p.pop();
+    }
 }
-
-function setup() {
-    createCanvas(displayWidth, displayHeight, WEBGL);
-    margin = width * 0.15;
-}
-
-function draw() {//quad(margin, 0,  margin, 90, margin + 450, 100, margin + 400, 0,);
-    background(0, 0, 0);
-
-    push();
-    stroke("#eeeeee");
-    fill("#111111");
-    box(width, height, width);
-    pop();
-
-    noStroke();
-    texture(els.img);
-    rect(-margin, 0, 100, 100);
-
-    //drawAlbumCube(els, 0, 0, 0);
-    //drawAlbumCube(klc, margin, 0, 0);
-}
-
-function drawAlbumCube(album, x, y, z) {
-    push();
-    translate(x, y, z);
-    rotateY(album.rotation);
-    rotateZ(album.rotation);
-    
-    album.rotation += 0.01 * (deltaTime / 50);
-    if (album.rotation > 360) { album.rotation = 0; }
-    texture(album.img);
-    box(margin/2, margin/2, margin/2);
-    pop();
-}
+new p5(songSketch, 'sidebar');

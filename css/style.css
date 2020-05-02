@@ -1,20 +1,44 @@
 body {
     font-family: 'Helvetica';
     font-weight: bold;
-    background-color:#111;
+    background-color:black;
     color:#eee;
+    overflow-x:hidden;
 }
 
-#sidebar h1 {
-    border-bottom:1px solid #eee;
-    width:15vw;
+#header {
+    width:100vw;
+    height:80vh;
+    position: absolute;
+    left:0;
+    top:0;
+}
+#header img {
+    bottom:0;
+    position: absolute;
+}
+#song-container1 {
+    width:70vw;
+    height:100vh;
+    position:absolute;
+    left:0;
+    top:80vh;
+    display: inline-block;
+}
+#lyric-container {
+    display: inline-block;
+    width:30vw;
+    height:100vh;
+    position:absolute;
+    left:65vw;
+    top:80vh;
 }
 
-canvas {
+/*canvas {
     left: 0;
     top:0;
     position:fixed;
     width:100vw;
     height:100vh;
     z-index:-1;
-}
+}*/
