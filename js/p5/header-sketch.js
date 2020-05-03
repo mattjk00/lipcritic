@@ -3,7 +3,7 @@ let headerSketch = function(p) {
     let rotz = 0;
 
     p.setup = function() {
-        p.createCanvas(p.displayWidth, p.displayHeight * 0.7, p.WEBGL);
+        p.createCanvas(p.windowWidth, p.windowHeight * 0.8, p.WEBGL);
         
         p.stroke(250, 250, 250);
         p.noFill();

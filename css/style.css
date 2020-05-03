@@ -16,6 +16,7 @@ body {
 #header img {
     bottom:0;
     position: absolute;
+    width:50vw;
 }
 #song-container1 {
     width:70vw;
