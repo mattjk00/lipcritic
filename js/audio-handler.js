@@ -3,6 +3,7 @@ let playButton = document.getElementById("playButton");
 let readyToPause = true;
 let audioInterval;
 let song;
+let lastPosition;
 
 var els = new Howl({
     src: ['music/els.mp3']
@@ -33,10 +34,12 @@ function updateProgressBar() {
 
 playButton.onclick = function() {
     if (readyToPause) {
-        song.pause();
+        lastPosition = song.seek();
+        song.stop();
         playButton.innerHTML = "play ";
         readyToPause = false;
     } else {
+        song.seek(lastPosition);
         song.play();
         playButton.innerHTML = "pause";
         readyToPause = true;
