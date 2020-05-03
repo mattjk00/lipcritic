@@ -29,7 +29,11 @@ function playSong(sn) {
 }
 
 function updateProgressBar() {
-    progressBar.value = song.seek();
+    if (readyToPause) {
+        progressBar.value = song.seek();
+    } else {
+        progressBar.value = lastPosition;
+    }
 }
 
 playButton.onclick = function() {
