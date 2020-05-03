@@ -9,7 +9,7 @@ let headerSketch = function(p) {
         p.noFill();
     }
     p.draw = function() {
-        p.background(150, 0, 0);
+        p.background(0, 0, 0);
         p.rotateX(rotx);
         p.box(p.width, p.width, p.width);
 

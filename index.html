@@ -6,15 +6,20 @@
         <meta name="language" content="english"/> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" href="css/style.css"/>
-        <script src="js/vue.js"></script>
+        <!--<script src="js/vue.js"></script>
         <script src="js/vue-router.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+        
+    <script src="js/main.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.3/howler.core.min.js"></script>
         <script src="js/p5/album.js"></script>
         <!--<script src="js/p5/lipsongs-sketch.js"></script>-->
         <script src="js/p5/header-sketch.js"></script>
         <script src="js/p5/lyrics-sketch.js"></script>
+        
     </head>
     <body>
+        
         <div id="main">
             <div id="header">
                 <div id="sketch-container"></div>
@@ -22,30 +27,19 @@
             </div>
             <br/>
             <div id="song-container1">
-                <svg width="400" height="200" style="clip-path: polygon(0 0, 100% 0%, 53% 65%, 0% 100%);">
-                    <a href="lipcritic.bandcamp.com">
-                        <image width="400" height="200" href="img/els.jpg" preserveAspectRatio="none" />
-                    </a>
-                </svg>
-                <svg width="400" height="200" style="clip-path: polygon(57% 60%, 100% 0%, 100% 100%, 0% 100%);">
-                    <a href="lipcritic.bandcamp.com">
-                        <image width="400" height="200" href="img/klc.jpg" preserveAspectRatio="none" />
-                    </a>
-                </svg>
-                <svg width="400" height="200" style="clip-path: polygon(1% 18%, 100% 0%, 75% 100%, 0% 100%);">
-                    <a href="lipcritic.bandcamp.com">
-                        <image width="400" height="200" href="img/robot.jpeg" preserveAspectRatio="none" />
-                    </a>
-                </svg>
-                <svg width="400" height="200" style="clip-path: polygon(21% 19%, 100% 0%, 75% 100%, 0% 100%);">
-                    <a href="lipcritic.bandcamp.com">
-                        <image width="400" height="200" href="img/monkey.jpeg" preserveAspectRatio="none" />
-                    </a>
-                </svg>
+                <img src="img/els.jpg" onclick="playSong('els')"/>
+                <img src="img/klc.jpg"/>
+                <img src="img/monkey.jpeg"/>
+                <img src="img/robot.jpeg"/>
+                <img src="img/cov.jpeg"/>
             </div>
             <div id="lyric-container">
                 <div id="lyric-sketch-container"></div>
             </div>
+        </div>
+        <div id="player">
+            <button id="playButton">pause</button>
+            <input type="range" min="1" max="100" value="0" class="slider" id="progressBar">
         </div>
         <!--
         <div id="app">
@@ -53,6 +47,6 @@
             <router-view></router-view>
         </div>-->
     </body>
-
-    <script src="js/main.js"></script>
+    <script src="js/audio-handler.js"></script>
+    
 </html>

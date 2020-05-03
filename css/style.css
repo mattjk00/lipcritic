@@ -26,6 +26,20 @@ body {
     top:80vh;
     display: inline-block;
 }
+#song-container1 img {
+    width:10vw;
+    height:10vw;
+    filter: grayscale(100%);
+    transition: all .2s ease-in-out;
+    cursor:default;
+}
+#song-container1 img:hover {
+    width:10vw;
+    height:10vw;
+    filter: grayscale(0%);
+    transform: scale(0.9);
+    cursor:pointer;
+}
 #lyric-container {
     display: inline-block;
     width:30vw;
@@ -34,6 +48,46 @@ body {
     left:65vw;
     top:80vh;
 }
+#player {
+    width:50vw;
+    z-index: 1;
+    background-color:black;
+    border:1px solid white;
+    border-top:none;
+    border-radius:3px;
+    position:fixed;
+    top:0;
+    left:25vw;
+    padding:10px;
+}
+#player button {
+    border:1px solid white;
+    background-color:black;
+    color:white;
+    padding:3px;
+    outline:none;
+}
+#player button:hover {
+    background-color:red;
+}
+#progressBar {
+    width:80%;
+    border-radius:50px;
+    -webkit-appearance: none;
+    background-color:black;
+    border:1px solid white;
+    outline:none;
+}
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    border:1px solid white;
+    background: black;
+    cursor: pointer;
+  }
 
 /*canvas {
     left: 0;
