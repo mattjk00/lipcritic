@@ -3,12 +3,18 @@ let headerSketch = function(p) {
     let rotz = 0;
     let ilan, ilanTexture;
     let bret, bretTexture;
+    let connor, connorTexture;
+    let danny, dannyTexture;
 
     p.preload = function() {
         ilan = p.loadModel("models/ilan.obj");
         ilanTexture = p.loadImage("models/ilantexture2.png");
         bret = p.loadModel("models/bret.obj");
         bretTexture = p.loadImage("models/brettexture.png");
+        connor = p.loadModel("models/bret.obj");
+        connorTexture = p.loadImage("models/connortexture.png");
+        danny = p.loadModel("models/danny.obj");
+        dannyTexture = p.loadImage("models/dannytexture.png");
     }
 
     p.setup = function() {
@@ -38,7 +44,7 @@ let headerSketch = function(p) {
         p.pointLight(255, 255, 255, 100, 100, 250);
 
         p.ambientMaterial(250);
-        p.push();
+        /*p.push();
         p.noStroke();
         p.scale(200, -200);
         p.rotateY(rotx/2);
@@ -53,9 +59,24 @@ let headerSketch = function(p) {
         p.translate(2, 0);
         p.texture(bretTexture);
         p.model(bret);
-        p.pop();
+        p.pop();*/
 
+        p.drawFace(ilan, ilanTexture, rotx/2, 0, 0);
+        p.drawFace(bret, bretTexture, rotx/3, 2, 0);
+        p.drawFace(connor, connorTexture, rotx, -2, 0);
+        p.drawFace(danny, dannyTexture, rotx/2, -2.5, 0);
+    }
+    p.drawFace = function(m, t, rv, x, y) {
+        p.ambientMaterial(250);
+        p.push();
+        p.noStroke();
+        p.scale(175, -175);
         
+        p.rotateY(rv);
+        p.translate(x, y);
+        p.texture(t);
+        p.model(m);
+        p.pop();
     }
 }
 new p5(headerSketch, 'sketch-container');
