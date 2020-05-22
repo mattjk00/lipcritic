@@ -18,28 +18,7 @@ body {
     position: absolute;
     width:50vw;
 }
-#song-container1 {
-    width:70vw;
-    height:100vh;
-    position:absolute;
-    left:0;
-    top:80vh;
-    display: inline-block;
-}
-#song-container1 img {
-    width:10vw;
-    height:10vw;
-    filter: grayscale(100%);
-    transition: all .2s ease-in-out;
-    cursor:default;
-}
-#song-container1 img:hover {
-    width:10vw;
-    height:10vw;
-    filter: grayscale(0%);
-    transform: scale(0.9);
-    cursor:pointer;
-}
+
 #lyric-container {
     display: inline-block;
     width:30vw;
@@ -49,7 +28,7 @@ body {
     top:80vh;
 }
 #player {
-    width:50vw;
+    width:80vw;
     z-index: 1;
     background-color:black;
     border:1px solid white;
@@ -57,7 +36,7 @@ body {
     border-radius:3px;
     position:fixed;
     top:0;
-    left:25vw;
+    left:10vw;
     padding:10px;
 }
 #player button {
@@ -74,6 +53,7 @@ body {
     width:80%;
     border-radius:50px;
     -webkit-appearance: none;
+    -moz-appearance: none;
     background-color:black;
     border:1px solid white;
     outline:none;
@@ -88,6 +68,67 @@ body {
     background: black;
     cursor: pointer;
   }
+  .slider::-moz-range-thumb {
+    -moz-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    border:1px solid white;
+    background: black;
+    cursor: pointer;
+  }
+
+#song-container1 {
+    width:100vw;
+    height:100vh;
+    position:absolute;
+    left:35vw;
+    top:80vh;
+    display: inline-block;
+}
+.card {
+    width:30vw;
+    height:30vw;
+    padding:5px;
+}
+.back { border:1px dashed salmon; text-align:center;}
+.song-link {
+    color:blue;
+    text-decoration: underline;
+    cursor: default;
+}
+.song-link:hover {
+    cursor: pointer;
+}
+.back span { display: inline; }
+.song-dl {
+    color:green;
+    cursor: pointer;
+}
+#song-container1 img {
+    filter: grayscale(100%);
+    transition: all .2s ease-in-out;
+    cursor:default;
+    width:30vw;
+    height:30vw;
+}
+#song-container1 img:hover {
+    filter: grayscale(0%);
+    /*transform: scale(0.9);*/
+    cursor:pointer;
+}
+
+@media only screen and (max-width: 768px) {
+    #song-container1 img, .card {
+        width:100vw;
+        height:100vw;
+    }
+    #song-container1 { 
+        left:0;
+    }
+}
+
 
 /*canvas {
     left: 0;

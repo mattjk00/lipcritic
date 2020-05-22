@@ -15,8 +15,8 @@
         <script src="js/p5/album.js"></script>
         <!--<script src="js/p5/lipsongs-sketch.js"></script>-->
         <script src="js/p5/header-sketch.js"></script>
-        <script src="js/p5/lyrics-sketch.js"></script>
-        
+        <!--<script src="js/p5/lyrics-sketch.js"></script>-->
+    
     </head>
     <body>
         
@@ -26,16 +26,35 @@
                 <img src="img/lip.png"/>
             </div>
             <br/>
+            
             <div id="song-container1">
-                <img src="img/els.jpg" onclick="playSong('els')"/>
-                <img src="img/klc.jpg"/>
+                <div id="c1" class="card">
+                    <div class="front">
+                        <img src="img/els.jpg"><!-- onclick="playSong('els')"/>-->
+                    </div>
+                    <div class="back">
+                        <div class="song-link-span">
+                            <span class="song-link" id="els">Entry Level Stud</span><a class="song-dl" href="/music/els.mp3" download="Entry Level Stud"> (Download)</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="front">
+                        <img src="img/klc.jpg"><!-- onclick="playSong('els')"/>-->
+                    </div>
+                    <div class="back">
+                        <p>Hi.</p>
+                    </div>
+                </div>
                 <img src="img/monkey.jpeg"/>
                 <img src="img/robot.jpeg"/>
                 <img src="img/cov.jpeg"/>
             </div>
+            
+            <!--
             <div id="lyric-container">
                 <div id="lyric-sketch-container"></div>
-            </div>
+            </div>-->
         </div>
         <div id="player">
             <button id="playButton">pause</button>
@@ -48,5 +67,7 @@
         </div>-->
     </body>
     <script src="js/audio-handler.js"></script>
-    
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+    <script src="js/card-helper.js"></script>
 </html>

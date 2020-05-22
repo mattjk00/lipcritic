@@ -14,6 +14,7 @@ let songs = { "els":els };
 function playSong(sn) {
     if (progressBar == null) {
         progressBar = document.getElementById("progressBar");
+        
     }
     if (song != null) {
         song.stop();
@@ -23,35 +24,56 @@ function playSong(sn) {
 
     progressBar.min = 0;
     progressBar.max = song.duration();
-    progressBar.value = 0;
+    do { 
+        progressBar.value = 0;
+    } while(progressBar.value != 0);
+    if (audioInterval != null) {
+        clearInterval(audioInterval);
+    }
     audioInterval = setInterval(updateProgressBar, 1000);
+    lastPosition = 0;
+    readyToPause = true;
+    setStatePlaying();
     song.play();
 }
 
 function updateProgressBar() {
+    
     if (readyToPause) {
         progressBar.value = song.seek();
     } else {
         progressBar.value = lastPosition;
     }
+    
 }
 
 playButton.onclick = function() {
     if (readyToPause) {
-        lastPosition = song.seek();
-        song.stop();
-        playButton.innerHTML = "play ";
-        readyToPause = false;
+        setStatePaused();
     } else {
-        song.seek(lastPosition);
+        setStatePlaying();
+    }
+}
+
+var setStatePlaying = function() {
+    song.seek(lastPosition);
         song.play();
         playButton.innerHTML = "pause";
         readyToPause = true;
-    }
+}
+
+var setStatePaused = function() {
+    lastPosition = song.seek();
+    song.stop();
+    playButton.innerHTML = "play ";
+    readyToPause = false;
 }
 
 progressBar.onchange = function() {
     song.stop();
     song.seek(progressBar.value);
-    song.play();
+    lastPosition = progressBar.value;
+    if (readyToPause == true) {
+        song.play();
+    }
 }
