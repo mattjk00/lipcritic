@@ -129,6 +129,23 @@ body {
     }
 }
 
+#poster {
+    
+    position: absolute;
+    top:40vw;
+    left:25vw;
+}
+
+#poster img {
+    width:50vw;
+    height:50vw;
+}
+
+#poster button {
+    width:50vw;
+    height:5vh;
+    font-size: 2em;
+}
 
 /*canvas {
     left: 0;
