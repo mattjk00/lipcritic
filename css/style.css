@@ -80,10 +80,10 @@ body {
   }
 
 #song-container1 {
-    width:100vw;
+    width:50vw;
     height:100vh;
     position:absolute;
-    left:35vw;
+    left:calc(50vw - 350px);
     top:80vh;
     display: inline-block;
 }
