@@ -129,12 +129,6 @@ body {
     }
 }
 
-#poster {
-    
-    position: absolute;
-    top:40vw;
-    left:25vw;
-}
 
 #poster img {
     width:50vw;
@@ -142,9 +136,14 @@ body {
 }
 
 #poster button {
-    width:50vw;
+    width:25vw;
     height:5vh;
     font-size: 2em;
+    background-color: lightblue;
+    border:1px solid pink;
+}
+#poster button a {
+    color:blue;
 }
 
 /*canvas {
