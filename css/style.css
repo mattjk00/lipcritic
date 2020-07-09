@@ -127,6 +127,9 @@ body {
     #song-container1 { 
         left:0;
     }
+    #poster {
+        display:none;
+    }
 }
 
 
@@ -136,14 +139,18 @@ body {
 }
 
 #poster button {
-    width:25vw;
-    height:5vh;
+    width:36.5vw;
+    height:10vh;
     font-size: 2em;
     background-color: lightblue;
     border:1px solid pink;
 }
 #poster button a {
     color:blue;
+}
+
+#creds {
+    font-size:0.7em;
 }
 
 /*canvas {
